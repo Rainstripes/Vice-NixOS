@@ -1,4 +1,8 @@
-# CONFIG REQUIREMENTS AND SPECIFICATIONS\n I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+<p>
+  # CONFIG REQUIREMENTS AND SPECIFICATIONS
+I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest` Besides that, 
+  
+</p>
 
 <p align="center">
   <img src="assets/vice.svg" width="96" alt="Vice icon"/>
