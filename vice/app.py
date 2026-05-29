@@ -21,6 +21,18 @@ without a terminal (e.g. from the app launcher).
 
 from __future__ import annotations
 
+import os
+
+os.environ.setdefault("QT_QPA_PLATFORM", "xcb")
+os.environ.setdefault(
+    "QTWEBENGINE_CHROMIUM_FLAGS",
+    "--disable-gpu "
+    "--disable-background-timer-throttling "
+    "--disable-renderer-backgrounding "
+    "--disable-backgrounding-occluded-windows "
+    "--disable-smooth-scrolling"
+)
+
 import asyncio
 import logging
 import os
