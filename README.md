@@ -26,7 +26,7 @@ Besides that (this can be added to individual user configs & Works with both `ho
 ```
 Also be sure your user is in the input group in order to use keybinds (`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`).
 
-If you want the cloudflare link to actually work, you need to install the nixos package (`pkgs.cloudflared`) along with the python extension from earlier.
+If you want the share link to actually _use_ cloudflare, you need to install its nixos package (`pkgs.cloudflared`) along with the python extension from earlier.
 
 You also need `pkgs.gpu-screen-recorder` for the preferred recording backend. In my experience with the other options, ffmpeg straight up doesn't work, and wf-recorder won't record any audio besides microphone audio.
 
