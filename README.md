@@ -35,10 +35,12 @@ IN SUMMARY:
 <p>
 Systemwide configuration.nix:
   
-```
-boot.kernelPackages = pkgs.linuxPackages
-`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];
-```
+`boot.kernelPackages = pkgs.linuxPackages`
+
+and
+
+`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`
+
 Per-user:
   
 ```
