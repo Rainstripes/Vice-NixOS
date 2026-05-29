@@ -1,10 +1,10 @@
 # NixOS CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
-  gpu-screen-recorder (the working recording backend) only works if your systemwide config has  
-  `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+gpu-screen-recorder (the working recording backend) only works if your systemwide config has  
+`boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
 </p>
 
-  Besides that, (this can be added to individual user configs & Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
+Besides that, (this can be added to individual user configs & Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
 </p>
 
   ```
@@ -30,12 +30,16 @@ If you want the cloudflare link to actually work, you need to install the nixos 
 You also need `pkgs.gpu-screen-recorder` for the preferred recording backend. In my experience with the other options, ffmpeg straight up doesn't work, and wf-recorder won't record any audio besides microphone audio.
 
 IN SUMMARY:
+</p>
+<p>
 Systemwide configuration.nix:
+  
 ```
 boot.kernelPackages = pkgs.linuxPackages
 `users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];
 ```
 Per-user:
+  
 ```
 with pkgs; [
     (pkgs.python313.withPackages (p: with p; [
