@@ -1,8 +1,10 @@
-# CONFIG REQUIREMENTS AND SPECIFICATIONS
+# NixOS CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
-I believe this only works if your systemwide config has ```boot.kernelPackages = pkgs.linuxPackages``` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
-  Besides that, (this can be added to individual user configs. Works with both home-manager and `users.users.USERNAME.packages = with pkgs;`, add/replace your python313 package with this:
   
+I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+  Besides that, (this can be added to individual user configs. Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
+  
+  ```
     (pkgs.python313.withPackages (p: with p; [
       evdev
       aiohttp
@@ -17,6 +19,12 @@ I believe this only works if your systemwide config has ```boot.kernelPackages =
       fuse
       cloudflare
     ]))
+```
+Also be sure your user is in the input group to use keybinds (users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];
+
+If you want the cloudflare link to actually work, you need to install the nixos package (pkgs.cloudflared) along with the python extension from earlier.
+w
+You also need `pkgs.gpu-screen-recorder` for the preferred recording backend. In my experience with the other options, ffmpeg straight up doesn't work, and wf-recorder won't record any audio besides microphone audio.
 </p>
 
 <p align="center">
