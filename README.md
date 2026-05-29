@@ -34,10 +34,10 @@ IN SUMMARY:
 </p>
 <p>
   
-Systemwide configuration.nix:
+**Systemwide configuration.nix:**
 `boot.kernelPackages = pkgs.linuxPackages` and `users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`
 
-Per-user:
+**Per-user:**
 ```
 with pkgs; [
     (pkgs.python313.withPackages (p: with p; [
