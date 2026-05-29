@@ -1,9 +1,8 @@
 # NixOS CONFIG REQUIREMENTS AND SPECIFICATIONS
-<p>
 Because NixOS is declarative, packages and system settings can't be changed by running a script; they must be manually added. Here's what to change for this to work:
-</p>
 
 <p>
+  
 gpu-screen-recorder (the working recording backend) only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
 </p>
 <p>
