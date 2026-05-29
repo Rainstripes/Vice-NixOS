@@ -5,7 +5,7 @@ gpu-screen-recorder (the working recording backend) only works if your systemwid
 </p>
 <p>
   
-Besides that, (this can be added to individual user configs & Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
+Besides that (this can be added to individual user configs & Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
 </p>
 
   ```
@@ -24,7 +24,7 @@ Besides that, (this can be added to individual user configs & Works with both `h
       cloudflare
     ]))
 ```
-Also be sure your user is in the input group to use keybinds ( `users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];` )
+Also be sure your user is in the input group in order to use keybinds (`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`).
 
 If you want the cloudflare link to actually work, you need to install the nixos package (`pkgs.cloudflared`) along with the python extension from earlier.
 
