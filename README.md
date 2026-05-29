@@ -1,6 +1,24 @@
 # CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
-I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest` Besides that, 
+I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+  Besides that, (this can be added to individual user configs), add/replace your python313 package with this:
+  ```
+  
+    (pkgs.python313.withPackages (p: with p; [
+      evdev
+      aiohttp
+      click
+      tomli
+      tomli-w
+      psutil
+      pywebview
+      pyqt6
+      pyqt6-webengine
+      pygobject3
+      fuse
+      cloudflare
+    ]))
+    ```
 </p>
 
 <p align="center">
