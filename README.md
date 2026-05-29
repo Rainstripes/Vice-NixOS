@@ -1,8 +1,7 @@
 # CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
-I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+I believe this only works if your systemwide config has ```boot.kernelPackages = pkgs.linuxPackages``` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
   Besides that, (this can be added to individual user configs. Works with both home-manager and `users.users.USERNAME.packages = with pkgs;`, add/replace your python313 package with this:
-  ```
   
     (pkgs.python313.withPackages (p: with p; [
       evdev
@@ -18,7 +17,6 @@ I believe this only works if your systemwide config has `boot.kernelPackages = p
       fuse
       cloudflare
     ]))
-    ```
 </p>
 
 <p align="center">
