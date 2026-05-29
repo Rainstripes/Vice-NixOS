@@ -1,8 +1,8 @@
 # NixOS CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
   
-I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
-  Besides that, (this can be added to individual user configs. Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
+gpu-screen-recorder (the working recording backend) only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+  Besides that, (this can be added to individual user configs & Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
   
   ```
     (pkgs.python313.withPackages (p: with p; [
@@ -20,11 +20,38 @@ I believe this only works if your systemwide config has `boot.kernelPackages = p
       cloudflare
     ]))
 ```
-Also be sure your user is in the input group to use keybinds (users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];
+Also be sure your user is in the input group to use keybinds (`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`)
 
-If you want the cloudflare link to actually work, you need to install the nixos package (pkgs.cloudflared) along with the python extension from earlier.
+If you want the cloudflare link to actually work, you need to install the nixos package (`pkgs.cloudflared`) along with the python extension from earlier.
 
 You also need `pkgs.gpu-screen-recorder` for the preferred recording backend. In my experience with the other options, ffmpeg straight up doesn't work, and wf-recorder won't record any audio besides microphone audio.
+
+IN SUMMARY:
+Systemwide configuration.nix:
+```
+boot.kernelPackages = pkgs.linuxPackages
+`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];
+```
+Per-user:
+```
+with pkgs; [
+    (pkgs.python313.withPackages (p: with p; [
+      evdev
+      aiohttp
+      click
+      tomli
+      tomli-w
+      psutil
+      pywebview
+      pyqt6
+      pyqt6-webengine
+      pygobject3
+      fuse
+      cloudflare
+    ]))
+pkgs.gpu-screen-recorder
+pkgs.cloudflared
+```
 </p>
 
 <p align="center">
