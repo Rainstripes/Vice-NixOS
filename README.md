@@ -1,9 +1,6 @@
 # NixOS CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
-  gpu-screen-recorder (the working recording backend) only works if your systemwide config has
-</p>
-<p>
-  
+  gpu-screen-recorder (the working recording backend) only works if your systemwide config has  
   `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
 </p>
 
