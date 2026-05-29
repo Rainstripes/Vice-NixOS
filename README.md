@@ -33,16 +33,11 @@ You also need `pkgs.gpu-screen-recorder` for the preferred recording backend. In
 IN SUMMARY:
 </p>
 <p>
-Systemwide configuration.nix:
   
-`boot.kernelPackages = pkgs.linuxPackages`
-
-and
-
-`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`
+Systemwide configuration.nix:
+`boot.kernelPackages = pkgs.linuxPackages` and `users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`
 
 Per-user:
-  
 ```
 with pkgs; [
     (pkgs.python313.withPackages (p: with p; [
