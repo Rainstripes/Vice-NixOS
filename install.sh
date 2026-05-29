@@ -120,7 +120,6 @@ detect_package_manager() {
 
 if ! PKG="$(detect_package_manager)"; then
     error "Unsupported distro. Install dependencies manually (see README)."
-    exit 1
 fi
 
 if [[ -n "$OS_PRETTY_NAME" ]]; then
