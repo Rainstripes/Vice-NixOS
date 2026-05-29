@@ -1,7 +1,8 @@
 # NixOS CONFIG REQUIREMENTS AND SPECIFICATIONS
 <p>
-gpu-screen-recorder (the working recording backend) only works if your systemwide config has  
-`boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
+gpu-screen-recorder (the working recording backend) only works if your systemwide config has
+  
+  `boot.kernelPackages = pkgs.linuxPackages` , and not `boot.kernelPackages = pkgs.linuxPackages_latest`
 </p>
 
 Besides that, (this can be added to individual user configs & Works with both `home-manager` and `users.users.USERNAME.packages = with pkgs;)`, add/replace your python313 package with this:
