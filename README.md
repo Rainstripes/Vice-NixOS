@@ -23,7 +23,7 @@
       cloudflare
     ]))
 ```
-Also be sure your user is in the input group to use keybinds (`users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];`)
+Also be sure your user is in the input group to use keybinds ( `users.users.USERNAME.extraGroups = ["wheel" "groupexample" "input"];` )
 
 If you want the cloudflare link to actually work, you need to install the nixos package (`pkgs.cloudflared`) along with the python extension from earlier.
 
