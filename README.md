@@ -1,7 +1,8 @@
 <p>
-  # CONFIG REQUIREMENTS AND SPECIFICATIONS\n
+  # CONFIG REQUIREMENTS AND SPECIFICATIONS
+</p>
+<p>
 I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest` Besides that, 
-  
 </p>
 
 <p align="center">
