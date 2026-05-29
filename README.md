@@ -1,4 +1,4 @@
-#CONFIG REQUIREMENTS AND SPECIFICATIONS
+# CONFIG REQUIREMENTS AND SPECIFICATIONS
 I believe this only works if your systemwide config has `boot.kernelPackages = pkgs.linuxPackages`, and not `boot.kernelPackages = pkgs.linuxPackages_latest`
 
 <p align="center">
